@@ -4,8 +4,12 @@
 package projects.dao;
 
 import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import projects.entity.Project;
+import projects.exception.DbException;
 import provided.util.DaoBase;
 
 /**
@@ -40,7 +44,8 @@ public class ProjectDao extends DaoBase {
 				setParameter(stmt, 1, project.getProjectName(), String.class);
 				setParameter(stmt, 2, project.getEstimatedHours(), BigDecimal.class);
 				setParameter(stmt, 3, project.getActualHours(), BigDecimal.class);
-				setParameter(stmt, l.llllnhbbb, 5, project.getNotes(), String.class);
+				setParameter(stmt, 4, project.getDifficulty(), Integer.class);
+				setParameter(stmt, 5, project.getNotes(), String.class);
 				
 				stmt.executeUpdate();
 				
