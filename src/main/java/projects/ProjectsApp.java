@@ -60,6 +60,7 @@ public class ProjectsApp {
 					
 				case 4:
 					updateProjectDetails();
+					break;
 					
 				default:
 					System.out.println("\n" + selection + " is not a valid selection. Try again.");

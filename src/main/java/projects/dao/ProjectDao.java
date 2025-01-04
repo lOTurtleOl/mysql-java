@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Locale.Category;
+
 import java.util.Objects;
 import java.util.Optional;
 
@@ -19,6 +19,7 @@ import projects.entity.Project;
 import projects.entity.Step;
 import projects.exception.DbException;
 import provided.util.DaoBase;
+import projects.entity.Category;
 
 /**
  * 
@@ -164,7 +165,7 @@ public class ProjectDao extends DaoBase {
 				}
 				
 				return categories;
-			};
+			}
 		}
 	}
 	
@@ -192,7 +193,6 @@ public class ProjectDao extends DaoBase {
 	}
 	
 	private List<Material> fetchMaterialsForProject(Connection conn, Integer projectId) throws SQLException {
-		throw SQLException {
 			// @formatter:off
 			
 			String sql = "SELECT * FROM " + MATERIAL_TABLE
@@ -214,9 +214,9 @@ public class ProjectDao extends DaoBase {
 		}
 		
 		
-			};
+			}
 		}
-	}
+	
 
 	public boolean modifyProjectDetails(Project project) {
 		// @formatter:off
