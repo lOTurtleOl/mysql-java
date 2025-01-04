@@ -153,7 +153,7 @@ public class ProjectDao extends DaoBase {
 		
 		// @formatter:on
 		
-		try(PreparedStatment stmt = conn.prepareStatement(sql)) {
+		try(PreparedStatement stmt = conn.prepareStatement(sql)) {
 			setParameter(stmt, 1, projectId, Integer.class);
 			
 			try(ResultSet rs = stmt.executeQuery()) {
@@ -176,7 +176,7 @@ public class ProjectDao extends DaoBase {
 		
 		// @formatter:on
 		
-		try(PreparedStatment stmt = conn.prepareStatement(sql)) {
+		try(PreparedStatement stmt = conn.prepareStatement(sql)) {
 			setParameter(stmt, 1, projectId, Integer.class);
 			
 			try(ResultSet rs = stmt.executeQuery()) {
@@ -187,7 +187,7 @@ public class ProjectDao extends DaoBase {
 				}
 				
 				return steps;
-			};
+			}
 		}
 	}
 	
@@ -200,7 +200,7 @@ public class ProjectDao extends DaoBase {
 			
 			// @formatter:on
 			
-			try(PreparedStatment stmt = conn.prepareStatement(sql)) {
+			try(PreparedStatement stmt = conn.prepareStatement(sql)) {
 				setParameter(stmt, 1, projectId, Integer.class);
 				
 				try(ResultSet rs = stmt.executeQuery()) {
@@ -216,6 +216,11 @@ public class ProjectDao extends DaoBase {
 		
 			};
 		}
+	}
+
+	public boolean modifyProjectDetails(Project project) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	
