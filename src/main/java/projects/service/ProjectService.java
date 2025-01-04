@@ -33,5 +33,9 @@ public class ProjectService {
 		return projectDao.fetchProjectById(projectId).orElseThrow(() -> new NoSuchElementException(
 				"Project with project ID=" + projectId + " does not exist."));
 	}
+	public void modifyProjectDetails(Project project) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
