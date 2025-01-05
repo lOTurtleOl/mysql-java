@@ -268,8 +268,30 @@ public class ProjectDao extends DaoBase {
 	 * @return
 	 */
 	public boolean deleteProject(Integer projectId) {
-		// TODO Auto-generated method stub
-		return false;
+		//formatter:off
+		String sql = ""
+				+ "DELETE FROM " + PROJECT_TABLE + " WHERE project_id = ?";
+		//formatter:on
+		
+		try(Connection conn = DbConnection.getConnection()) {
+			startTransaction(conn);
+			
+			try(PreparedStatement stmt = conn.prepareStatement(sql)) {
+				setParameter(stmt, 1, projectId, Integer.class);
+				
+				boolean deleted = stmt.executeUpdate() == 1;
+				commitTransaction(conn);
+				
+				return deleted;
+			}
+			catch(Exception e) {
+				rollbackTransaction(conn);
+				throw new DbException(e);
+			}
+		}
+		catch(SQLException e) {
+			throw new DbException(e);
+		}
 	}
 
 	
