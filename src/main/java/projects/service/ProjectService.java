@@ -43,8 +43,9 @@ public class ProjectService {
 	 * @param projectId
 	 */
 	public void deleteProject(Integer projectId) {
-		// TODO Auto-generated method stub
-		
+		if(!projectDao.deleteProject(projectId)) {
+			throw new DbException("Project with ID=" + projectId + " does not exist.");
+		}
 	}
 
 }

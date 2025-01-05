@@ -263,6 +263,15 @@ public class ProjectDao extends DaoBase {
 		}
 	}
 
+	/**
+	 * @param projectId
+	 * @return
+	 */
+	public boolean deleteProject(Integer projectId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 	
 }
