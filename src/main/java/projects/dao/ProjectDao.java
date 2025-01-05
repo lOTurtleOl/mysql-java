@@ -50,12 +50,19 @@ public class ProjectDao extends DaoBase {
 			startTransaction(conn);
 			
 			try(PreparedStatement stmt = conn.prepareStatement(sql)) {
+				
+				System.out.println("Project Name: " + project.getProjectName());
+				System.out.println("Estimated Hours: " + project.getEstimatedHours());
+				// Add similar prints for other parameters.
+
 				setParameter(stmt, 1, project.getProjectName(), String.class);
 				setParameter(stmt, 2, project.getEstimatedHours(), BigDecimal.class);
 				setParameter(stmt, 3, project.getActualHours(), BigDecimal.class);
 				setParameter(stmt, 4, project.getDifficulty(), Integer.class);
 				setParameter(stmt, 5, project.getNotes(), String.class);
 				
+				System.out.println("Executing SQL: " + sql);
+
 				stmt.executeUpdate();
 				
 				Integer projectId = getLastInsertId(conn, PROJECT_TABLE);
