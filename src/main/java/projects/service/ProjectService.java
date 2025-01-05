@@ -39,5 +39,12 @@ public class ProjectService {
 			throw new DbException("Project with ID=" + project.getProjectId() + " does not exist.");
 		}
 	}
+	/**
+	 * @param projectId
+	 */
+	public void deleteProject(Integer projectId) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
